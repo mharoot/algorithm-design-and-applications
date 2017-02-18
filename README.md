@@ -28,7 +28,7 @@ Algorithm Design and Applications
             <td role="gridcell">Chap 8</td>
           </tr>
           <tr role="row" class="clickable">
-            <td role="gridcell" style="cursor: pointer;"> <a href="https://github.com/mharoot/algorithm-design-and-applications/tree/master/week1/" class="wiki-page-link">3</a></td>
+            <td role="gridcell" style="cursor: pointer;"> <a href="https://github.com/mharoot/algorithm-design-and-applications/tree/master/week3/" class="wiki-page-link">3</a></td>
             <td role="gridcell">Search Algorithms and Kth Order Statistics</td>
             <td role="gridcell">Chap 9</td>
           </tr>      
