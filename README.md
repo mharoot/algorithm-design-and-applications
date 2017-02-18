@@ -18,17 +18,17 @@ Algorithm Design and Applications
       </thead>
       <tbody class="collectionViewItems">
           <tr role="row" class="clickable">
-            <td role="gridcell" style="cursor: pointer;"> <a href="https://github.com/Michaelh818/algorithm-design-and-applications/week1/" class="wiki-page-link">1</a></td>
+            <td role="gridcell" style="cursor: pointer;"> <a href="https://github.com/mharoot/algorithm-design-and-applications/week1/" class="wiki-page-link">1</a></td>
             <td role="gridcell">Algorithm Analysis and Asymptotic Notation</td>
             <td role="gridcell">Chap 1</td>
           </tr>
           <tr role="row" class="clickable">
-            <td role="gridcell" style="cursor: pointer;"> <a href="https://github.com/Michaelh818/algorithm-design-and-applications/week2/" class="wiki-page-link">2</a></td>
+            <td role="gridcell" style="cursor: pointer;"> <a href="https://github.com/mharoot/algorithm-design-and-applications/week2/" class="wiki-page-link">2</a></td>
             <td role="gridcell">Sort Algorithms and Recurrence Equations</td>
             <td role="gridcell">Chap 8</td>
           </tr>
           <tr role="row" class="clickable">
-            <td role="gridcell" style="cursor: pointer;"> <a href="https://github.com/Michaelh818/algorithm-design-and-applications/week1/" class="wiki-page-link">3</a></td>
+            <td role="gridcell" style="cursor: pointer;"> <a href="https://github.com/mharoot/algorithm-design-and-applications/week1/" class="wiki-page-link">3</a></td>
             <td role="gridcell">Search Algorithms and Kth Order Statistics</td>
             <td role="gridcell">Chap 9</td>
           </tr>      
