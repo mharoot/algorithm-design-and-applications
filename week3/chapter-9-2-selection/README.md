@@ -3,10 +3,8 @@
     <h2>Selection</h2>
     <h3>What?</h3>
     <pre>
-        <h4>
         There are a number of applications in which we are interested in identifying a single
         element in terms of its rank relative to an ordering of the entire set.
-        </h4>
     </pre>
         Examples include indentifying the:
         <ul>
@@ -16,9 +14,6 @@
             </li>
         </ul>
     <pre>
-        <h4>
         The Selection Problem
-        </h4>
     </pre>
-        
 </div>
