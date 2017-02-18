@@ -7,6 +7,12 @@
         There are a number of applications in which we are interested in identifying a single
         element in terms of its rank relative to an ordering of the entire set.
         </h4>
-        Example:
+        Examples include indentifying the:
+        <ul>
+            <li>minimum and maximum elements</li>
+            <li><strong>median</strong> element, that is, the element such that half
+            of the other elements are smaller and the remaining half are larger.
+            </li>
+        </ul>
     </pre>
 </div>
