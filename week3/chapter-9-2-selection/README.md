@@ -7,5 +7,6 @@
         There are a number of applications in which we are interested in identifying a single
         element in terms of its rank relative to an ordering of the entire set.
         </h4>
+        Example:
     </pre>
 </div>
