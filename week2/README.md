@@ -30,4 +30,18 @@
 
     <p>3. <strong>Conquer:</strong> Put back the elements into S by merging the sorted sequences S1 and S2 into a sorted sequence.</p>
     </div>
+
+    <div class="post-body">
+	<h2>why mergesort is <strong>ϴ</strong>(n log n) ?</h2>
+    <pre><strong>Terms to Know:
+    Big-theta ϴ : </strong> merge sort worst case is both <code>O(n*log(n))</code> and <code>Omega(n*log(n))</code> - and thus is also <code>Ө(n*log(n)), </code>but it is also <code>O(n^2)</code>, since <code>n^2</code> is asymptotically "bigger" than it. However, it is <strong>not</strong> <code>Ө(n^2)</code>, Since the algorithm is not <code>Omega(n^2)</code>.
+    <strong>Big O:  </strong>is giving upper <a href="http://en.wikipedia.org/wiki/Asymptote">asymptotic bound
+    </a><strong>Big Omega Ω</strong><strong>:</strong> is giving a lower bound. Big Theta gives both.
+
+    <strong>In General:</strong>
+    Everything that is <code>Ө(f(n))</code> is also <code>O(f(n))</code>, but not the other way around. 
+    <code>T(n)</code> is said to be in <code>Ө(f(n))</code> if it is both in <code>O(f(n))</code> and in <code>Omega(f(n))</code>. 
+    In sets terminology, <strong><code>Ө(f(n))</code> is the <a href="http://en.wikipedia.org/wiki/Set_%28mathematics%29#Intersections">intersection</a> of <code>O(f(n))</code> and <code>Omega(f(n))</code></strong>
+    </pre>
+    </div>
 </div>
