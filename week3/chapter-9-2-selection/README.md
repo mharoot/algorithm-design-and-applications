@@ -44,4 +44,9 @@
         <li>Runs in O(n) <strong>expected</strong> time</li>
         <li>Runs in O(n²) in the <strong>worst case</strong> time</li>
     </ul>
+        <pre>
+        <h4>Algoirthm RandomizedQuickSelect(S, k)</h4>
+        <strong>if</strong> n = 1 <strong>then</strong> 
+                    <strong>return</strong>  the (first) element of S
+    </pre>
 </div>
