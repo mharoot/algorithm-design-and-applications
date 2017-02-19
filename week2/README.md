@@ -45,4 +45,10 @@ Everything that is <code>Ө(f(n))</code> is also <code>O(f(n))</code>, but not t
 In sets terminology, <strong><code>Ө(f(n))</code> is the <a href="http://en.wikipedia.org/wiki/Set_%28mathematics%29#Intersections">intersection</a> of <code>O(f(n))</code> and <code>Omega(f(n))</code></strong>
 </pre>
 </div>
+
+<div class="post-body">
+	<h2>Tracing Mergesort using a Binary Tree</h2>
+<p>We can visualize an execution of the merge-sort algorithm using a binary tree T, called the merge-sort tree.</p>
+<img src="http://chatapp.cu.cc/assets/images/posts/merge-sort-tree.JPG">
+</div>
 </div>
