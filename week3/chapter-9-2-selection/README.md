@@ -32,8 +32,7 @@
     <br><strong><i>Input:</i></strong> Sequence S of n comparable elements, and an integer k ∈ [1, n]
     <br><strong><i>Output:</i></strong> The kth smallest element of S
     <br><strong>if</strong> n = 1 <strong>then</strong> 
-            <strong>return</strong>  the (first) element of S
-
+        <strong>return</strong>  the (first) element of S
         pick a random element x of S
         remove all the elements from S and put them into three sequences:
             ◙ L, storing the elements in S less than x
