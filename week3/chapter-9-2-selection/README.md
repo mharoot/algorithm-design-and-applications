@@ -12,10 +12,7 @@
         of the other elements are smaller and the remaining half are larger.
         </li>
     </ul>
-    <pre><h4>The Selection Problem</h4>
-    Terms to know:
-    <strong>Order Statistics: </strong>queries that ask for an element with a given rank.
-    </pre>
+    <pre><h4>The Selection Problem</h4><br>Terms to know:<br><strong>Order Statistics: </strong>queries that ask for an element with a given rank.</pre>
     The general order-statistic problem of selecting the kth smallest element from an unsorted collection of n comparable elements.
     <pre>
         Why?
