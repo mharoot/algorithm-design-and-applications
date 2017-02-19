@@ -46,9 +46,17 @@
     </ul>
         <pre>
         <h4>Algoirthm RandomizedQuickSelect(S, k)</h4>
-        <strong><i>Input:</i></strong>Sequence S of n comparable elements, and an integer k ∈ [1, n]
-        <strong><i>Output:</i></strong>The kth smallest element of S
+        <strong><i>Input:</i></strong> Sequence S of n comparable elements, and an integer k ∈ [1, n]
+        <strong><i>Output:</i></strong> The kth smallest element of S
         <strong>if</strong> n = 1 <strong>then</strong> 
                     <strong>return</strong>  the (first) element of S
+        pick a random element x of S
+        remove all the elements from S and put them into three sequences:
+        <ul>
+            <li>L, storing the elements in S less than x</li>
+            <li>E, storing the elements in S equal to x</li>
+            <li>G, storing the elements in S greater than x</li>
+        </ul>
+
     </pre>
 </div>
