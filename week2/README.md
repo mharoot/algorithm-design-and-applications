@@ -50,5 +50,9 @@ In sets terminology, <strong><code>Ө(f(n))</code> is the <a href="http://en.wik
 	<h2>Tracing Mergesort using a Binary Tree</h2>
 <p>We can visualize an execution of the merge-sort algorithm using a binary tree T, called the merge-sort tree.</p>
 <img src="https://github.com/mharoot/algorithm-design-and-applications/blob/master/week2/merge-sort-tree.JPG">
+<p>This algorithm visualization in terms of the merge-sort tree helps us analyze the running
+time of the merge-sort algorithm. In particular, since the size of the input sequence
+roughly halves at each recursive call of merge-sort, the height of the merge-sort tree
+is about log n (recall that the base of log is 2 if omitted).</p>
 </div>
 </div>
