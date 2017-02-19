@@ -17,7 +17,8 @@
     <pre><h4>Why?</h4></pre>
     We want to know whether we can achieve an O(n) running time for all values of k, including the interesting case of finding the median, where k = n/2.
     <h3>Selection Solution in O(n) time for any value of k</h3>
-    <pre><strong>Prune-and-Search:</strong><br>In applying this technique, we solve a given problem that is defined on a collection of n objects by pruning away a fraction of the n objects and recursively solving the smaller problem. When we have finally reduced the problem to one defined on a constant-sized collection of objects, then we solve the problem using some brute-force method. Returning back from all the recursive calls completes the construction.</pre>
+    <pre><strong>Prune-and-Search:</strong><br>In applying this technique, we solve a given problem that is defined on a collection of n objects by pruning away a fraction of the n objects and recursively solving the smaller problem. When we have finally reduced the problem to one defined on a constant-sized collection of objects, then we solve the problem using some brute-force method. Returning back from all the recursive calls completes the construction.
+    </pre>
 
 <!-- chapter 9.2.1 -->
     <h2>9.2.1 Randomized Quick-Select</h2>
@@ -28,11 +29,13 @@
         <li>Runs in O(n) <strong>expected</strong> time</li>
         <li>Runs in O(n²) in the <strong>worst case</strong> time</li>
     </ul>
-    <pre><h4>Algoirthm RandomizedQuickSelect(S, k)</h4>
-    <br><strong><i>Input:</i></strong> Sequence S of n comparable elements, and an integer k ∈ [1, n]
-    <br><strong><i>Output:</i></strong> The kth smallest element of S
-    <br><strong>if</strong> n = 1 <strong>then</strong> 
-        <strong>return</strong>  the (first) element of S
+    <pre>
+        <h4>Algoirthm RandomizedQuickSelect(S, k)</h4>
+        <strong><i>Input:</i></strong> Sequence S of n comparable elements, and an integer k ∈ [1, n]
+        <strong><i>Output:</i></strong> The kth smallest element of S
+        <strong>if</strong> n = 1 <strong>then</strong> 
+            <strong>return</strong>  the (first) element of S
+
         pick a random element x of S
         remove all the elements from S and put them into three sequences:
             ◙ L, storing the elements in S less than x
