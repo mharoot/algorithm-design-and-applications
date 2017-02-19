@@ -19,4 +19,8 @@
         <strong>Order Statistics: </strong>queries that ask for an element with a given rank.
     </pre>
     The general order-statistic problem of selecting the kth smallest element from an unsorted collection of n comparable elements.
+    <pre>
+        Why?
+    </pre>
+    We want to know whether we can achieve an O(n) running time for all values of k, including the interesting case of finding the median, where k = n/2.
 </div>
