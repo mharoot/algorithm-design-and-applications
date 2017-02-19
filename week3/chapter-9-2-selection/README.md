@@ -65,6 +65,7 @@
             RandomizedQuickSelect(G, k - |L| - |E|)
     <br>
         <h4>Example 1: Given set S = {4, 10, 8, 9, 7, 10, 11, 3, 6} and n = 9; find median k = n / 2 "ceiling"</h4>
+        Lets trace whats going on using the Algoirthm above:
         k = 5th smallest element
         RandomizedQuickSelect(S, 5)
         n != 1 continue...
