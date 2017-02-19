@@ -29,7 +29,7 @@
         <li>Runs in O(n) <strong>expected</strong> time</li>
         <li>Runs in O(n²) in the <strong>worst case</strong> time</li>
     </ul>
-   <pre>Algoirthm RandomizedQuickSelect(S, k)
+<pre>Algoirthm RandomizedQuickSelect(S, k)
 <strong><em>Input:</em></strong> Sequence S of n comparable elements, and an integer k ∈ [1, n] 
 <strong><em>Output:</em></strong> The kth smallest element of S
 
@@ -47,32 +47,51 @@ pick a random element x of S remove all the elements from S and put them into th
 &nbsp;   </strong><strong>return</strong> x // each element in E is equal to x
 <strong>else</strong> 
     RandomizedQuickSelect(G, k - |L| - |E|)
-    <br>
-        <h4>Example 1: Given set S = {4, 10, 8, 9, 7, 10, 11, 3, 6} and n = 9; find median k = n / 2 "ceiling"</h4>
-        Lets trace whats going on using the Algoirthm above:
 
-        k = 5th smallest element
-        RandomizedQuickSelect(S, 5)
-        n != 1 continue...
-        pick a random element x of S; x = 7 (note: unrelated to k)
-        L = {4, 3, 6} &amp; |L| = 3
-        E = {7} &amp; |E| = 1
-        G = {10, 8, 9, 10, 11} &amp; |G| = 5
-        our k = 5, k is not less than or equal to 3
-        k is not less than or equal to 3 + 1
-        k is greater than 3 + 1
-        At this point L and E are <strong>pruned</strong> or "not dealing with"
-        RandomizedQuickSelect(G, k - |L| - |E|)
-        RandomizedQuickSelect(G, 5 - 3 - 1)
-        RandomizedQuickSelect(G, 1)
-        n != 1 continue...
-        pick a random element x of S = {10, 8, 9, 10, 11}; x = 8 (note: unrelated to k we could have picked 11 we still get 8 as the 5th smallest element..)
-        L = {} &amp; |L| = 0
-        E = {8} &amp; |E| = 1
-        G = {10, 9, 10, 11} &amp; |G| = 4
-        our k = 1, k is not less than or equal to 0
-        k is less than or equal to 0 + 1
-        return 8
-        </pre>
+Example 1: Given set S = {4, 10, 8, 9, 7, 10, 11, 3, 6} and n = 9; find median k = n / 2 "ceiling" 
+
+Lets trace whats going on using the Algoirthm above:
+
+k = 5th smallest element
+
+RandomizedQuickSelect(S, 5)
+
+n != 1 continue...
+
+pick a random element x of S; x = 7 (note: unrelated to k)
+
+L = {4, 3, 6} &amp; |L| = 3
+
+E = {7} &amp; |E| = 1
+
+G = {10, 8, 9, 10, 11} &amp; |G| = 5
+
+our k = 5, k is not less than or equal to 3
+
+k is not less than or equal to 3 + 1
+
+k is greater than 3 + 1 At this point L and E are <strong>pruned</strong> or "not dealing with"
+
+RandomizedQuickSelect(G, k - |L| - |E|)
+
+RandomizedQuickSelect(G, 5 - 3 - 1)
+
+RandomizedQuickSelect(G, 1)
+
+n != 1 continue...
+
+pick a random element x of S = {10, 8, 9, 10, 11}; x = 8 (note: unrelated to k we could have picked 11 we still get 8 as the 5th smallest element..)
+
+L = {} &amp; |L| = 0
+
+E = {8} &amp; |E| = 1
+
+G = {10, 9, 10, 11} &amp; |G| = 4
+
+our k = 1, k is not less than or equal to 0
+
+k is less than or equal to 0 + 1
+
+return 8</pre>
 
 </div>
