@@ -49,18 +49,20 @@
         <strong><i>Input:</i></strong> Sequence S of n comparable elements, and an integer k ∈ [1, n]
         <strong><i>Output:</i></strong> The kth smallest element of S
         <strong>if</strong> n = 1 <strong>then</strong> 
-                <strong>return</strong>  the (first) element of S
+            <strong>return</strong>  the (first) element of S
+
         pick a random element x of S
         remove all the elements from S and put them into three sequences:
             ◙ L, storing the elements in S less than x
             ◙ E, storing the elements in S equal to x
             ◙ G, storing the elements in S greater than x
+            
         <strong>if</strong> k ≤ |L| <strong>then</strong>
-                RandomizedQuickSelect(L, k)
+            RandomizedQuickSelect(L, k)
         <strong>else if</strong> k ≤ |L| + |E| <strong>then</strong>
-                <strong>return</strong>  x      // each element in E is equal to x
+            <strong>return</strong>  x      // each element in E is equal to x
         <strong>else</strong>
-                RandomizedQuickSelect(G, k - |L| - |E|)
+            RandomizedQuickSelect(G, k - |L| - |E|)
 
     </pre>
 </div>
