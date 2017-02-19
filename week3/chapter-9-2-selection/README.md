@@ -1,5 +1,7 @@
 <div class="show-content user_content clearfix enhanced">
     <h1 class="page-title">Fast Sorting and Selection Chapter 9</h1>
+
+<!-- chapter 9.2.0 -->
     <h2>Selection Chapter 9.2.0</h2>
     <h3>What?</h3>
     <pre>
@@ -32,4 +34,14 @@
         some brute-force method. Returning back from all the recursive calls completes
         the construction.
     </pre>
+
+<!-- chapter 9.2.1 -->
+    <h2>9.2.1 Randomized Quick-Select</h2>
+    <h3>What?</h3>
+    <ul>
+        <li>Uses the <strong>Prune-and-Search</strong> technique</li>
+        <li>Finds the kth smallest element in an unordered sequence of n elements on which a total order relation is defined</li>
+        <li>Runs in O(n) <strong>expected</strong> time</li>
+        <li>Runs in O(n²) in the <strong>worst case</strong> time</li>
+    </ul>
 </div>
