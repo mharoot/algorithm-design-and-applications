@@ -4,7 +4,7 @@
 <!-- chapter 9.2.0 -->
     <h2>Selection Chapter 9.2.0</h2>
     <h3>What?</h3>
-    <pre style="white-space: pre-wrap;">There are a number of applications in which we are interested in identifying a single element in terms of its rank relative to an ordering of the entire set.</pre>
+    <pre style="white-space: pre-wrap; word-wrap: break-word;">There are a number of applications in which we are interested in identifying a single element in terms of its rank relative to an ordering of the entire set.</pre>
     Examples include indentifying the:
     <ul>
         <li>minimum and maximum elements</li>
