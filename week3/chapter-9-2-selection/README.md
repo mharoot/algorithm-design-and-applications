@@ -46,6 +46,8 @@
     </ul>
         <pre>
         <h4>Algoirthm RandomizedQuickSelect(S, k)</h4>
+        <strong><i>Input:</i></strong>
+        <strong><i>Output:</i></strong>
         <strong>if</strong> n = 1 <strong>then</strong> 
                     <strong>return</strong>  the (first) element of S
     </pre>
