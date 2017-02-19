@@ -1,6 +1,6 @@
 <div class="show-content user_content clearfix enhanced">
-    <h1 class="page-title">Fast Sorting and Selection</h1>
-    <h2>Selection</h2>
+    <h1 class="page-title">Fast Sorting and Selection Chapter 9</h1>
+    <h2>Selection Chapter 9.2.0</h2>
     <h3>What?</h3>
     <pre>
         There are a number of applications in which we are interested in identifying a single
@@ -23,4 +23,13 @@
         Why?
     </pre>
     We want to know whether we can achieve an O(n) running time for all values of k, including the interesting case of finding the median, where k = n/2.
+    <h3>Selection Solution in O(n) time for any value of k</h3>
+    <pre><strong>Prune-and-Search:</strong>
+        In applying this technique, we solve a given problem that is defined on a
+        collection of n objects by pruning away a fraction of the n objects and recursively
+        solving the smaller problem. When we have finally reduced the problem to one
+        defined on a constant-sized collection of objects, then we solve the problem using
+        some brute-force method. Returning back from all the recursive calls completes
+        the construction.
+    </pre>
 </div>
