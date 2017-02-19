@@ -1,3 +1,4 @@
+
 <div class="show-content user_content clearfix enhanced">
     <h1 class="page-title">Fast Sorting and Selection</h1>
     <h2>Selection</h2>
@@ -14,6 +15,9 @@
             </li>
         </ul>
     <pre>
-        The Selection Problem
+        <h4>The Selection Problem</h4>
+        Terms to know:
+        <strong>Order Statistics: </strong>queries that ask for an element with a given rank.
     </pre>
+
 </div>
