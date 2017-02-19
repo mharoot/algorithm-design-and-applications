@@ -17,14 +17,7 @@
     <pre><h4>Why?</h4></pre>
     We want to know whether we can achieve an O(n) running time for all values of k, including the interesting case of finding the median, where k = n/2.
     <h3>Selection Solution in O(n) time for any value of k</h3>
-    <pre><strong>Prune-and-Search:</strong>
-        In applying this technique, we solve a given problem that is defined on a
-        collection of n objects by pruning away a fraction of the n objects and recursively
-        solving the smaller problem. When we have finally reduced the problem to one
-        defined on a constant-sized collection of objects, then we solve the problem using
-        some brute-force method. Returning back from all the recursive calls completes
-        the construction.
-    </pre>
+    <pre><strong>Prune-and-Search:</strong><br>In applying this technique, we solve a given problem that is defined on a collection of n objects by pruning away a fraction of the n objects and recursively solving the smaller problem. When we have finally reduced the problem to one defined on a constant-sized collection of objects, then we solve the problem using some brute-force method. Returning back from all the recursive calls completes the construction.</pre>
 
 <!-- chapter 9.2.1 -->
     <h2>9.2.1 Randomized Quick-Select</h2>
