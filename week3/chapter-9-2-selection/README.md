@@ -29,25 +29,24 @@
         <li>Runs in O(n) <strong>expected</strong> time</li>
         <li>Runs in O(n²) in the <strong>worst case</strong> time</li>
     </ul>
-    <pre>
-        <h4>Algoirthm RandomizedQuickSelect(S, k)</h4>
-        <strong><i>Input:</i></strong> Sequence S of n comparable elements, and an integer k ∈ [1, n]
-        <strong><i>Output:</i></strong> The kth smallest element of S
-        <strong>if</strong> n = 1 <strong>then</strong> 
-            <strong>return</strong>  the (first) element of S
+   <pre>Algoirthm RandomizedQuickSelect(S, k)
+<strong><em>Input:</em></strong> Sequence S of n comparable elements, and an integer k ∈ [1, n] 
+<strong><em>Output:</em></strong> The kth smallest element of S
 
-        pick a random element x of S
-        remove all the elements from S and put them into three sequences:
-            ◙ L, storing the elements in S less than x
-            ◙ E, storing the elements in S equal to x
-            ◙ G, storing the elements in S greater than x
+<strong>if</strong> n = 1 <strong>then</strong> 
+<strong>    return</strong> the (first) element of S 
 
-        <strong>if</strong> k ≤ |L| <strong>then</strong>
-            RandomizedQuickSelect(L, k)
-        <strong>else if</strong> k ≤ |L| + |E| <strong>then</strong>
-            <strong>return</strong>  x      // each element in E is equal to x
-        <strong>else</strong>
-            RandomizedQuickSelect(G, k - |L| - |E|)
+pick a random element x of S remove all the elements from S and put them into three sequences:
+◙ L, storing the elements in S less than x 
+◙ E, storing the elements in S equal to x 
+◙ G, storing the elements in S greater than x 
+
+<strong>if</strong> k ≤ |L| <strong>then</strong> 
+&nbsp;   RandomizedQuickSelect(L, k) 
+<strong>else if</strong> k ≤ |L| + |E| <strong>then
+&nbsp;   </strong><strong>return</strong> x // each element in E is equal to x
+<strong>else</strong> 
+    RandomizedQuickSelect(G, k - |L| - |E|)
     <br>
         <h4>Example 1: Given set S = {4, 10, 8, 9, 7, 10, 11, 3, 6} and n = 9; find median k = n / 2 "ceiling"</h4>
         Lets trace whats going on using the Algoirthm above:
