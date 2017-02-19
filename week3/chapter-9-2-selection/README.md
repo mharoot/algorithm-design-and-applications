@@ -28,11 +28,10 @@
         <li>Runs in O(n) <strong>expected</strong> time</li>
         <li>Runs in O(n²) in the <strong>worst case</strong> time</li>
     </ul>
-    <pre>
-        <h4>Algoirthm RandomizedQuickSelect(S, k)</h4>
-        <strong><i>Input:</i></strong> Sequence S of n comparable elements, and an integer k ∈ [1, n]
-        <strong><i>Output:</i></strong> The kth smallest element of S
-        <strong>if</strong> n = 1 <strong>then</strong> 
+    <pre><h4>Algoirthm RandomizedQuickSelect(S, k)</h4>
+    <br><strong><i>Input:</i></strong> Sequence S of n comparable elements, and an integer k ∈ [1, n]
+    <br><strong><i>Output:</i></strong> The kth smallest element of S
+    <br><strong>if</strong> n = 1 <strong>then</strong> 
             <strong>return</strong>  the (first) element of S
 
         pick a random element x of S
