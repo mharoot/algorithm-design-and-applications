@@ -65,7 +65,7 @@
             RandomizedQuickSelect(G, k - |L| - |E|)
     </pre>
     Example 1: Given set S = {4, 10, 8, 9, 7, 10, 11, 3, 6} and n = 9; find median k = n / 2 "ceiling"
-    <ul style="height:300px; overflow:auto; border:8px solid yellowgreen; padding:2%">
+    <ul style="height:300px; overflow:hidden; overflow-y:scroll;">
         <li>k = 5th smallest element</li>
         <li>RandomizedQuickSelect(S, 5)</li>
         <li>n != 1 continue...</li>
