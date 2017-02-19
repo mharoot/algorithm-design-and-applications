@@ -63,27 +63,26 @@
             <strong>return</strong>  x      // each element in E is equal to x
         <strong>else</strong>
             RandomizedQuickSelect(G, k - |L| - |E|)
-    </pre>
-    Example 1: Given set S = {4, 10, 8, 9, 7, 10, 11, 3, 6} and n = 9; find median k = n / 2 "ceiling"
-    <ul style="height:300px; overflow:hidden; overflow-y:scroll;">
-        <li>k = 5th smallest element</li>
-        <li>RandomizedQuickSelect(S, 5)</li>
-        <li>n != 1 continue...</li>
-        <li>pick a random element x of S; x = 7 (note: unrelated to k)</li>
-        <li>L = {4, 3, 6} &amp; |L| = 3</li>
-        <li>E = {7} &amp; |E| = 1</li>
-        <li>G = {10, 8, 9, 10, 11} &amp; |G| = 5</li>
-        <li>our k = 5, k is not less than or equal to 3</li>
-        <li>k is not less than or equal to 3 + 1</li>
-        <li>k is greater than 3 + 1</li>
-        <li>RandomizedQuickSelect(G, k - |L| - |E|)</li>
-        <li>RandomizedQuickSelect(G, 5 - 3 - 1)</li>
-        <li>RandomizedQuickSelect(G, 1)</li>
-        <li>n != 1 continue...</li>
-        <li>pick a random element x of S = {10, 8, 9, 10, 11}; x = 8 (note: unrelated to k)</li>
-        <li>L = {} &amp; |L| = 0</li>
-        <li>E = {8} &amp; |E| = 1</li>
-        <li>G = {10, 9, 10, 11} &amp; |G| = 4</li>
-        <li></li>
-    </ul>
+    <br>
+        <h4>Example 1: Given set S = {4, 10, 8, 9, 7, 10, 11, 3, 6} and n = 9; find median k = n / 2 "ceiling"</h4>
+        k = 5th smallest element
+        RandomizedQuickSelect(S, 5)
+        n != 1 continue...
+        pick a random element x of S; x = 7 (note: unrelated to k)
+        L = {4, 3, 6} &amp; |L| = 3
+        E = {7} &amp; |E| = 1
+        G = {10, 8, 9, 10, 11} &amp; |G| = 5
+        our k = 5, k is not less than or equal to 3
+        k is not less than or equal to 3 + 1
+        k is greater than 3 + 1
+        RandomizedQuickSelect(G, k - |L| - |E|)
+        RandomizedQuickSelect(G, 5 - 3 - 1)
+        RandomizedQuickSelect(G, 1)
+        n != 1 continue...
+        pick a random element x of S = {10, 8, 9, 10, 11}; x = 8 (note: unrelated to k)
+        L = {} &amp; |L| = 0
+        E = {8} &amp; |E| = 1
+        G = {10, 9, 10, 11} &amp; |G| = 4
+        </pre>
+
 </div>
