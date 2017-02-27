@@ -31,7 +31,7 @@ public class Driver {
 			stop = System.nanoTime();
 			runtime = stop - start;
 		}
-		System.out.println("Number of comparisons for insertion sort: "+comparisons);
+		System.out.println("Number of comparisons for "+type+" sort: "+comparisons);
 		System.out.println(sorts.isSorted(a));
 		System.out.println("runtime: "+runtime+"ns");
 		System.out.println("\n\n");
