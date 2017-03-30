@@ -4,9 +4,7 @@ public class JobScheduler
     private int nJobs;
     private Job[]  jobs;
 
-    static final int SORT_DEADLINE = 0;
-    static final int SORT_PROFIT = 1;
-    static final int SORT_LENGTH = 2;
+
 
 
     public JobScheduler( int[] joblength, int[] deadline, int[] profit)
@@ -22,8 +20,7 @@ public class JobScheduler
     public void printJobs()  //prints the array jobs
     {
 
-        String str = "Input: Jobs to be scheduled\n";
-        str += "Job format is (length, deadline, profit, start, finish)\n";
+        String str = null;
 
         for(int i = 0; i < nJobs; i++)
         {
@@ -38,6 +35,8 @@ public class JobScheduler
     //Brute force. Try all n! orderings. Return the schedule with the most profit
     public Schedule bruteForceSolution()
     {
+        
+
         return null;
     }
 
@@ -46,10 +45,9 @@ public class JobScheduler
 //earliest deadline first schedule. Schedule items contributing 0 to total profit last
     {
 
-        for(int i= 0; i < nJobs; i++)
-        {
-            Sorts.mergesort(jobs, SORT_DEADLINE);
-        }
+
+        Sorts.mergesort(jobs, Sorts.EARILIEST_DEADLINE_FIRST);
+
         Schedule schedule = new Schedule();
         int [] arr = new int[nJobs];
         for (int i = 0; i < nJobs; i++)
@@ -60,11 +58,11 @@ public class JobScheduler
             }else {
                 jobs[i].start = jobs[i - 1].finish;
                 jobs[i].finish = jobs[i].start + jobs[i].length;
-                if (jobs[i].finish > jobs[i].deadline && arr[i]!=1) {
+                if (jobs[i].finish > jobs[i].deadline && arr[jobs[i].jobNumber]!=1) {
+                    arr[jobs[i].jobNumber] = 1;
                     Job temp = jobs[nJobs-1];
                     jobs[nJobs-1] = jobs[i];
                     jobs[i] = temp;
-                    arr[i] = 1;
                     i--;
                 }
             }
@@ -73,7 +71,7 @@ public class JobScheduler
         for(int i =0; i < nJobs; i++)
         {
             schedule.add(jobs[i]);
-            if(arr[i] == 1)
+            if(arr[jobs[i].jobNumber] == 1)
             {
                 schedule.profit -= jobs[i].profit;
             }
@@ -85,28 +83,35 @@ public class JobScheduler
     public Schedule makeScheduleSJF()
 //shortest job first schedule. Schedule items contributing 0 to total profit last
     {
-        for(int i= 0; i < nJobs; i++)
-        {
-            Sorts.mergesort(jobs, SORT_LENGTH);
-        }
+
+        Sorts.mergesort(jobs, Sorts.SHORTEST_JOB_FIRST);
+
         Schedule schedule = new Schedule();
+        int [] arr = new int[nJobs];
         for (int i = 0; i < nJobs; i++)
         {
             if(i == 0){
                 jobs[i].start = 0;
                 jobs[i].finish = jobs[i].length;
             }else {
-                if(jobs[i-1].finish > jobs[i].deadline)
-                {
-                    jobs[i].profit = 0;
+                jobs[i].start = jobs[i - 1].finish;
+                jobs[i].finish = jobs[i].start + jobs[i].length;
+                if (jobs[i].finish > jobs[i].deadline && arr[jobs[i].jobNumber]!=1) {
+                    arr[jobs[i].jobNumber] = 1;
                     Job temp = jobs[nJobs-1];
                     jobs[nJobs-1] = jobs[i];
                     jobs[i] = temp;
                     i--;
-                }else {
-                    jobs[i].start = jobs[i - 1].finish;
-                    jobs[i].finish = jobs[i].start + jobs[i].length;
                 }
+            }
+        }
+
+        for(int i =0; i < nJobs; i++)
+        {
+            schedule.add(jobs[i]);
+            if(arr[jobs[i].jobNumber] == 1)
+            {
+                schedule.profit -= jobs[i].profit;
             }
         }
 
@@ -117,21 +122,36 @@ public class JobScheduler
 //highest profit first schedule. Schedule items contributing 0 to total profit last
     {
 
-        for(int i= 0; i < nJobs; i++)
-        {
-            Sorts.mergesort(jobs, SORT_PROFIT);
-        }
+
+        Sorts.mergesort(jobs, Sorts.HIGHEST_PROFIT_FIRST);
+
         Schedule schedule = new Schedule();
-        for (int i = nJobs - 1; i >= 0; i--)
+        int [] arr = new int[nJobs];
+        for (int i = 0; i < nJobs; i++)
         {
             if(i == 0){
                 jobs[i].start = 0;
                 jobs[i].finish = jobs[i].length;
-            }else{
-                jobs[i].start = jobs[i-1].finish;
+            }else {
+                jobs[i].start = jobs[i - 1].finish;
                 jobs[i].finish = jobs[i].start + jobs[i].length;
+                if (jobs[i].finish > jobs[i].deadline && arr[jobs[i].jobNumber]!=1) {
+                    arr[jobs[i].jobNumber] = 1;
+                    Job temp = jobs[nJobs-1];
+                    jobs[nJobs-1] = jobs[i];
+                    jobs[i] = temp;
+                    i--;
+                }
             }
+        }
+
+        for(int i =0; i < nJobs; i++)
+        {
             schedule.add(jobs[i]);
+            if(arr[jobs[i].jobNumber] == 1)
+            {
+                schedule.profit -= jobs[i].profit;
+            }
         }
 
         return schedule;

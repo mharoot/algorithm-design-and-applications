@@ -3,9 +3,9 @@
 public class Sorts {
 
     private static int INFINITY = 10000000;
-    private static int EARILIEST_DEADLINE_FIRST = 0;
-    private static int HIGHEST_PROFIT_FIRST = 1;
-    private static int SHORTEST_JOB_FIRST = 2;
+    static int EARILIEST_DEADLINE_FIRST = 0;
+    static int HIGHEST_PROFIT_FIRST = 1;
+    static int SHORTEST_JOB_FIRST = 2;
 
 
 /* --------------------Merge Sort --------------------*/
@@ -38,7 +38,7 @@ public class Sorts {
 
         for (int j = i; j <= k; j++) {
 
-            if (leftSideLessThanOrEqualToRight(SORT_BY, l, r)) {
+            if ( leftSideLessThanOrEqualToRight(SORT_BY, L[l], R[r]) ) {
                 a[j] = L[l];
                 l++;
             } else {
@@ -65,13 +65,15 @@ public class Sorts {
         return new Job(-1, INFINITY, INFINITY, -1);
     }
 
-    private static boolean leftSideLessThanOrEqualToRight (int SORT_BY, int l, int r) {
+    private static boolean leftSideLessThanOrEqualToRight (int SORT_BY, Job l, Job r) {
         boolean status = false;
-        if (SORT_BY == EARILIEST_DEADLINE_FIRST || SORT_BY == SHORTEST_JOB_FIRST) {
-            status = l <= r;
+        if (SORT_BY == EARILIEST_DEADLINE_FIRST ) {
+            status = l.deadline <= r.deadline;
+        } else if (SORT_BY == SHORTEST_JOB_FIRST) {
+            status = l.length <= r.length;
         } else if (SORT_BY == HIGHEST_PROFIT_FIRST) {
             // note the difference
-            status = r <= l;
+            status = r.profit <= l.profit;
         }
 
         return status;
