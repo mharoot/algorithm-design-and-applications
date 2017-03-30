@@ -22,6 +22,17 @@ public class JobScheduler
     public void printJobs()  //prints the array jobs
     {
 
+        String str = "Input: Jobs to be scheduled\n";
+        str += "Job format is (length, deadline, profit, start, finish)\n";
+
+        for(int i = 0; i < nJobs; i++)
+        {
+             //#0:(7,7,10,-1,-1)
+            str += "#" + jobs[i].jobNumber+":("+jobs[i].length+","+jobs[i].deadline+",";
+            str += jobs[i].profit + "," + jobs[i].start +","+ jobs[i].finish+")\n";
+        }
+
+        System.out.println(str);
     }
 
     //Brute force. Try all n! orderings. Return the schedule with the most profit
@@ -42,9 +53,28 @@ public class JobScheduler
         Schedule schedule = new Schedule();
         for (int i = 0; i < nJobs; i++)
         {
-            schedule.add(jobs[i]);
+            if(i == 0){
+                jobs[i].start = 0;
+                jobs[i].finish = jobs[i].length;
+            }else {
+                if(jobs[i-1].finish > jobs[i].deadline)
+                {
+                    jobs[i].profit = 0;
+                    Job temp = jobs[nJobs-1];
+                    jobs[nJobs-1] = jobs[i];
+                    jobs[i] = temp;
+                    i--;
+                }else {
+                    jobs[i].start = jobs[i - 1].finish;
+                    jobs[i].finish = jobs[i].start + jobs[i].length;
+                }
+            }
         }
 
+        for(int i =0; i < nJobs; i++)
+        {
+            schedule.add(jobs[i]);
+        }
         return schedule;
     }
 
@@ -58,7 +88,22 @@ public class JobScheduler
         Schedule schedule = new Schedule();
         for (int i = 0; i < nJobs; i++)
         {
-            schedule.add(jobs[i]);
+            if(i == 0){
+                jobs[i].start = 0;
+                jobs[i].finish = jobs[i].length;
+            }else {
+                if(jobs[i-1].finish > jobs[i].deadline)
+                {
+                    jobs[i].profit = 0;
+                    Job temp = jobs[nJobs-1];
+                    jobs[nJobs-1] = jobs[i];
+                    jobs[i] = temp;
+                    i--;
+                }else {
+                    jobs[i].start = jobs[i - 1].finish;
+                    jobs[i].finish = jobs[i].start + jobs[i].length;
+                }
+            }
         }
 
         return schedule;
@@ -75,6 +120,13 @@ public class JobScheduler
         Schedule schedule = new Schedule();
         for (int i = nJobs - 1; i >= 0; i--)
         {
+            if(i == 0){
+                jobs[i].start = 0;
+                jobs[i].finish = jobs[i].length;
+            }else{
+                jobs[i].start = jobs[i-1].finish;
+                jobs[i].finish = jobs[i].start + jobs[i].length;
+            }
             schedule.add(jobs[i]);
         }
 

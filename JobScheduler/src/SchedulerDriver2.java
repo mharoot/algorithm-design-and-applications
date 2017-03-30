@@ -16,17 +16,19 @@ public class SchedulerDriver2
                 "(length, deadline, profit, start, finish)" );
         js.printJobs();
 
+        /*
         //--------------------------------------------
         System.out.println("\nOptimal Solution Using Brute Force O(n!)");
         Schedule bestSchedule = js.bruteForceSolution();
         System.out.println( bestSchedule);
-
+        */
 
         //---------------------------------------
         System.out.println("\nEDF with unprofitable jobs last ");
         Schedule EDFPSchedule = js.makeScheduleEDF();
         System.out.println(EDFPSchedule);
 
+        /*
         //-------------------------------------
         System.out.println("\nSJF with unprofitable jobs last");
         Schedule SJFPSchedule = js.makeScheduleSJF();
@@ -41,6 +43,7 @@ public class SchedulerDriver2
         System.out.println("\nYour own creative solution");
         Schedule NASSchedule = js.newApproxSchedule();
         System.out.println(NASSchedule);
+        */
 
     }
 }
