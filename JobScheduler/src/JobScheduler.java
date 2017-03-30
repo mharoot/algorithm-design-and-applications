@@ -6,12 +6,18 @@ public class JobScheduler
 
     public JobScheduler( int[] joblength, int[] deadline, int[] profit)
     {
-//Set nJobs
-//Fill jobs array. The kth job entered has JobNo = k;
+        nJobs = joblength.length;
+        jobs = new Job[nJobs];
+        for(int i =0; i < nJobs; i++)
+        {
+            jobs[i] = new Job(i, joblength[i], deadline[i], profit[i]);
+        }
     }
 
     public void printJobs()  //prints the array jobs
-    {  }
+    {
+
+    }
 
     //Brute force. Try all n! orderings. Return the schedule with the most profit
     public Schedule bruteForceSolution()
@@ -24,8 +30,9 @@ public class JobScheduler
 //earliest deadline first schedule. Schedule items contributing 0 to total profit last
     {
 
+
         Schedule schedule = new Schedule();
-        Sorts.mergesort(jobs.deadline)
+
         for (int i = 0; i < jobs.length; i++) {
             schedule.add(jobs[i]);
         }
