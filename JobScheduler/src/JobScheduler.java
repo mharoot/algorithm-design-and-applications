@@ -51,22 +51,21 @@ public class JobScheduler
             Sorts.mergesort(jobs, SORT_DEADLINE);
         }
         Schedule schedule = new Schedule();
+        int [] arr = new int[nJobs];
         for (int i = 0; i < nJobs; i++)
         {
             if(i == 0){
                 jobs[i].start = 0;
                 jobs[i].finish = jobs[i].length;
             }else {
-                if(jobs[i-1].finish > jobs[i].deadline)
-                {
-                    jobs[i].profit = 0;
+                jobs[i].start = jobs[i - 1].finish;
+                jobs[i].finish = jobs[i].start + jobs[i].length;
+                if (jobs[i].finish > jobs[i].deadline && arr[i]!=1) {
                     Job temp = jobs[nJobs-1];
                     jobs[nJobs-1] = jobs[i];
                     jobs[i] = temp;
+                    arr[i] = 1;
                     i--;
-                }else {
-                    jobs[i].start = jobs[i - 1].finish;
-                    jobs[i].finish = jobs[i].start + jobs[i].length;
                 }
             }
         }
@@ -74,7 +73,12 @@ public class JobScheduler
         for(int i =0; i < nJobs; i++)
         {
             schedule.add(jobs[i]);
+            if(arr[i] == 1)
+            {
+                schedule.profit -= jobs[i].profit;
+            }
         }
+
         return schedule;
     }
 

@@ -1,4 +1,4 @@
-import javax.jws.soap.SOAPBinding;
+
 
 public class Sorts {
 
@@ -19,25 +19,9 @@ public class Sorts {
         Job [] R = new Job[nR+1];
 
         boolean leftSideLessThanOrEqualToRight = false;
-        
-        // keep this format until brute force and dynamic programming confirms we can use the job(-1, INFINITY, INIFINITY, -1) as a constant call INFINITY_JOB.
-        if (SORT_BY == EARILIEST_DEADLINE_FIRST) {
-            leftSideLessThanOrEqualToRight = L[l].deadline <= R[r].deadline;
-            // Job( int jn , int len, int d, int p)
-            L[nL] = new Job(-1, -1, INFINITY, -1);
-            R[nR] = L[nL];
-        } else if (SORT_BY == HIGHEST_PROFIT_FIRST) {
-            // note the difference
-            leftSideLessThanOrEqualToRight = R[r].profit <= L[l].profit;
-            // Job( int jn , int len, int d, int p)
-            L[nL] = new Job(-1, -1, INFINITY, -1);
-            R[nR] = L[nL];
-        } else if (SORT_BY == SHORTEST_JOB_FIRST) {
-            leftSideLessThanOrEqualToRight = L[l].length <= R[r].length;
-            // Job( int jn , int len, int d, int p)
-            L[nL] = new Job(-1, INFINITY, INFINITY, -1);
-            R[nR] = L[nL];
-        }
+
+        L[nL] = getJobInifinity(SORT_BY);
+        R[nR] = L[nL];
 
         // divide left hand side from
         for (int  l = 0; l < nL; l++) {
@@ -53,7 +37,8 @@ public class Sorts {
         int l = 0, r = 0;
 
         for (int j = i; j <= k; j++) {
-            if (leftSideLessThanOrEqualToRight) {
+
+            if (leftSideLessThanOrEqualToRight(SORT_BY, l, r)) {
                 a[j] = L[l];
                 l++;
             } else {
@@ -64,6 +49,32 @@ public class Sorts {
 
 
         return a;
+    }
+
+    private static Job getJobInifinity(int SORT_BY) {
+
+        // keep this format until brute force and dynamic programming confirms we can use the job(-1, INFINITY, INIFINITY, -1) as a constant call INFINITY_JOB.
+        if (SORT_BY == EARILIEST_DEADLINE_FIRST) {
+            return new Job(-1, -1, INFINITY, -1);
+        } else if (SORT_BY == HIGHEST_PROFIT_FIRST) {
+            return new Job(-1, -1, INFINITY, -1);
+        } else if (SORT_BY == SHORTEST_JOB_FIRST) {
+            return new Job(-1, INFINITY, INFINITY, -1);
+        }
+
+        return new Job(-1, INFINITY, INFINITY, -1);
+    }
+
+    private static boolean leftSideLessThanOrEqualToRight (int SORT_BY, int l, int r) {
+        boolean status = false;
+        if (SORT_BY == EARILIEST_DEADLINE_FIRST || SORT_BY == SHORTEST_JOB_FIRST) {
+            status = l <= r;
+        } else if (SORT_BY == HIGHEST_PROFIT_FIRST) {
+            // note the difference
+            status = r <= l;
+        }
+
+        return status;
     }
 
 
