@@ -18,12 +18,12 @@ public class SchedulerDriver2
                 "(length, deadline, profit, start, finish)" );
         js.printJobs();
 
-        /*
+
         //--------------------------------------------
         System.out.println("\nOptimal Solution Using Brute Force O(n!)");
         Schedule bestSchedule = js.bruteForceSolution();
         System.out.println( bestSchedule);
-        */
+
 
         //---------------------------------------
         System.out.println("\nEDF with unprofitable jobs last ");
