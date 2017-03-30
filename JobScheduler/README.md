@@ -1,3 +1,3 @@
 #job scheduler
 
-by marvin and michael harootoonyan
+by Marvin and Michael Harootoonyan
