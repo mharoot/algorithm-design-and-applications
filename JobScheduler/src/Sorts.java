@@ -6,6 +6,8 @@ public class Sorts {
     static int EARILIEST_DEADLINE_FIRST = 0;
     static int HIGHEST_PROFIT_FIRST = 1;
     static int SHORTEST_JOB_FIRST = 2;
+    static int NEW_APPROXIMATE_SCHEDULE = 3;
+
 
 
 /* --------------------Merge Sort --------------------*/
@@ -38,7 +40,7 @@ public class Sorts {
 
         for (int j = i; j <= k; j++) {
 
-            if ( leftSideLessThanOrEqualToRight(SORT_BY, L[l], R[r]) ) {
+            if (leftSideLessThanOrEqualToRight(SORT_BY, L[l], R[r]) ) {
                 a[j] = L[l];
                 l++;
             } else {
@@ -57,9 +59,11 @@ public class Sorts {
         if (SORT_BY == EARILIEST_DEADLINE_FIRST) {
             return new Job(-1, -1, INFINITY, -1);
         } else if (SORT_BY == HIGHEST_PROFIT_FIRST) {
-            return new Job(-1, -1, INFINITY, -1);
+            return new Job(-1, -1, -1, -INFINITY);
         } else if (SORT_BY == SHORTEST_JOB_FIRST) {
-            return new Job(-1, INFINITY, INFINITY, -1);
+            return new Job(-1, INFINITY, -1, -1);
+        }else if (SORT_BY == NEW_APPROXIMATE_SCHEDULE){
+            return new Job(-1, -1 ,1, -INFINITY);
         }
 
         return new Job(-1, INFINITY, INFINITY, -1);
@@ -74,6 +78,10 @@ public class Sorts {
         } else if (SORT_BY == HIGHEST_PROFIT_FIRST) {
             // note the difference
             status = r.profit <= l.profit;
+        }
+        else if(SORT_BY == NEW_APPROXIMATE_SCHEDULE)
+        {
+            status = ((float)r.profit/r.deadline) <= ((float)l.profit/l.deadline) ;
         }
 
         return status;
