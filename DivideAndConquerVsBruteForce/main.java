@@ -36,7 +36,7 @@ public class main {
     /**
      * @task Find the maximum possible sum in arr[] including arr[m]
      * @param arr an array of positive and negative integers
-     * @param l ending point of the left hand side of the array
+     * @param l starting point of the left hand side of the array
      * @param m midpoint of the array
      * @param h ending point of the right hand side of the array
      * @return sum of elements on left and right of mid
