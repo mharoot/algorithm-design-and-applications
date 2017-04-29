@@ -67,22 +67,13 @@ public void printGraph()  {
 		ArrayList<EdgeNode> edges = adjList[i];
 
 		int m = edges.size();
-		for (int j = 0; j < m; j++) 
-		{
-			int vertex    = edges.get(j).vertex1;
-			int neighbor  = edges.get(j).vertex2;
-			int weight    = edges.get(j).weight;
+		
+		for (int j = 0; j < m; j++) {
+			if (j == 0) System.out.print("v= " + edges.get(j).vertex1 + " [");
 			
-			if (j == 0) System.out.print("\nv= " + vertex + " ["); // v= 0  [
-			System.out.print("("+vertex+","+neighbor+","+weight);
-			
-			
-			if (j == m - 1) {
-				System.out.println(")]");
-			} else {
-				System.out.print("), ");
-			}
-			
+			System.out.print(edges.get(j).toString());
+			String endStr = j == m - 1 ? "]\n" : ", ";
+			System.out.print(endStr);
 		}
 		
 	}
@@ -91,7 +82,7 @@ public void printGraph()  {
 
 public int get_nVertices(){return nVertices;}
 public int get_nEdges() {return nEdges;  }
-public int get_TotalWeightOfEdges() {return 0; } 
+public int get_TotalWeightOfEdges() {return totalEdgeWeight; } 
 
 public Graph dfsTraversal ( int start)  {  
 	Graph graph = null;
@@ -257,4 +248,5 @@ class PQNode implements Comparable<PQNode>
         return "(" + vertex + "," + distance;
     }
 }
-}
+
+} // end of graph class
