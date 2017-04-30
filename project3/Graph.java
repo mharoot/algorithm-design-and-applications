@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 /*******************************************************************************
  * Created by michael on 4/27/17.
@@ -14,6 +15,7 @@ private ArrayList<EdgeNode> []   adjList ;
 private int nVertices;
 private int  nEdges;
 private int totalEdgeWeight;
+
 
 public Graph ( String inputFileName)  { // creates Graph from data in file 
 	this(5);
@@ -96,21 +98,61 @@ public Graph dfsTraversal ( int start)  {
  * If the graph is connected, return the spanning tree from the dfs traversal.
  * Otherwise, return null. 
 */
+	
 	return graph;
 }
 
+
+/**
+ * 
+ * @param start = using this instance of an undirected weighted graph G with 
+ * nonnegative edge weights, and a distinguished vertex v of G
+ * 
+ * 	Output: mPriorityQueue = a priority queue, A label, D[u], for each vertex u of G, such that
+ *  D[u] is the distance from v to u in G
+ */
 public void   dijkstraShortestPaths (int start ) {
-/* Implement Dijkstra algorithm from text or class;
- * Use the Java PriorityQueue<PQNode>   class. Use PQNode class below. The Java 
- * PriorityQueue class has no updateKey method. For our problem, just add a new 
- * updated  node to the priority queue. This will work for Dijkstra's algorithm 
- * since the new node has a smaller priority than the node you want to update. 
- * See Problem C-14.3 in text.  An alternative is to remove the old node and add
- * a new node. 
- * Print shortest paths from vertex start to all other vertices reachable from 
- * start. Use format from class.
-*/
-	} 
+
+	// Let a priority queue, Q, contain all the vertices of G using the D labels as keys
+	PriorityQueue<PQNode> Q = new PriorityQueue<PQNode>();
+	int []D = new int [nVertices];
+	for (int u = 0; u < nVertices; u++) {
+		D[u] = (u != start) ? Integer.MAX_VALUE : 0;
+	}
+	
+
+	
+	
+	// initially pull start vertex v into Q
+	Q.add(new PQNode(start,D[start]));
+	
+	while (!Q.isEmpty()) {
+		// pull a new vertex u into the cloud
+		PQNode u = Q.remove(); // problem how do i know im removing min?
+		for (EdgeNode z : adjList[u.vertex]) { // for each vertex z adjacent to u such that z is in Q do
+			// perform the relaxation procedure on edge (u, z)
+			int weightFromUtoZ = z.weight;
+			if (D[u.vertex] + weightFromUtoZ < D[z.vertex2] ) {
+				D[z.vertex2] = D[u.vertex] + weightFromUtoZ;
+				Q.add(new PQNode(z.vertex2, D[z.vertex2]));
+			}
+			
+		}
+	}
+	
+	/*
+	 * Use the Java PriorityQueue<PQNode>   class. Use PQNode class below. The Java 
+	 * PriorityQueue class has no updateKey method. For our problem, just add a new 
+	 * updated  node to the priority queue. This will work for Dijkstra's algorithm 
+	 * since the new node has a smaller priority than the node you want to update.
+	 */
+	for (int i = 0; i < 5; i++)
+	System.out.println(D[i]);
+
+
+	
+	
+} 
 
 public Graph  kruskalMST()   {
 	Graph mst = null;
