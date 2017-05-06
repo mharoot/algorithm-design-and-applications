@@ -114,16 +114,32 @@ int main()
 {
 	// Let us create a graph shown in the above example
 	                   //s, 1, 2, 3, 4, 5, t
-	int graph[V][V] = { {0, 7, 6, 5, 0, 0, 0},//s  no incoming edges zeroed out down the first comlumn
-						{0, 0, 0, 1, 2, 0, 0},
-						{0, 0, 0, 3, 0, 9, 0},
-						{0, 0, 0, 0, 5, 0, 3},
-						{0, 0, 0, 0, 0, 0, 6},
-						{0, 0, 0, 0, 0, 0, 8},
-						{0, 0, 0, 0, 0, 0, 0}// t no outgoing edges zeroed out last row
-					};
+	int graph[V][V] =     { {0, 7, 6, 5, 0, 0, 0},//s  no incoming edges zeroed out down the first comlumn
+				{0, 0, 0, 1, 2, 0, 0},
+				{0, 0, 0, 3, 0, 9, 0},
+				{0, 0, 0, 0, 5, 0, 3},
+				{0, 0, 0, 0, 0, 0, 6},
+				{0, 0, 0, 0, 0, 0, 8},
+				{0, 0, 0, 0, 0, 0, 0}// t no outgoing edges zeroed out last row
+			};
 
 	minCut(graph, 0, 6);
+	/*
+	note:change V to 8 to run. Solution to R-16.6. source to 1, source to 2, source to 3, (numbered alphabetical order.)
+		                   //s, 1, 2, 3, 4, 5, 6, t
+	int graph[V][V] =     { {0, 1, 0, 0, 2, 4, 0, 0}, // s
+				{0, 0, 1, 0, 0, 0, 0, 0}, // 1
+				{0, 0, 0, 2, 0, 0, 0, 2}, // 2
+				{0, 0, 0, 0, 0, 0, 0, 4}, // 3
+				{0, 0, 1, 1, 0, 0, 0, 0}, // 4
+				{0, 0, 2, 0, 0, 0, 2, 0}, // 5
+				{0, 0, 0, 4, 0, 0, 0, 1}, // 6
+				{0, 0, 0, 0, 0, 0, 0, 0}, // t
+			};
+
+	minCut(graph, 0, 7);
+
+	*/
 
 	return 0;
 }
